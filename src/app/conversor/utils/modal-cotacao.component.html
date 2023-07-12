@@ -1,5 +1,6 @@
 <div 
 	class="modal fade" 
+  [id]="id"
 	tabindex="-1" 
 	role="dialog" 
 	aria-labelledby="modalLabel">
@@ -14,7 +15,7 @@
         	<span aria-hidden="true">&times;</span>
         </button>
         <h4 class="modal-title" id="modalLabel">
-        	Cotação em {{ dataCotacao }}
+        	Cotação em {{ dataCotacao | dataBr}}
         </h4>
       </div>
       <div class="modal-body text-center">

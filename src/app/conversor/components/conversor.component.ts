@@ -24,7 +24,8 @@ constructor(
 {}
 
 ngOnInit(): void {
-  this.moedas = this.moedaService.listarTodas();
+  //this.moedas = this.moedaService.exibirEuro();
+  this.moedas = this.moedaService.listarTodas();  
   this.init();
 }
 

@@ -29,11 +29,10 @@ export class ModalCotacaoComponent implements OnInit {
     }
 
     return (this.conversao.valor * 
-            this.conversaoResponse.rates[this.conversao.moedaPara]).toFixed(2);      
-      
+            this.conversaoResponse.rates[this.conversao.moedaPara]).toFixed(2);     
   }
 
-    get cotacaoPara(): number{
+    get cotacaoPara(): number {
     return this.conversorService.cotacaoPara(
       this.conversaoResponse, this.conversao);
     }
