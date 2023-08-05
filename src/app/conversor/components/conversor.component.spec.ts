@@ -1,7 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ConversorComponent } from './conversor.component';
-import { MoedaService, ConversorService } from '../services';
+import { ConversorService, MoedaService } from '../services';
+import { DataBrPipe } from '../pipes';
+import { ModalCotacaoComponent } from '../utils';
+import { NumeroDirective } from '../directives';
 
 describe('ConversorComponent', () => {
   let component: ConversorComponent;
@@ -9,8 +14,9 @@ describe('ConversorComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ConversorComponent],
-      providers: [MoedaService, ConversorService],
+      declarations: [DataBrPipe, ModalCotacaoComponent, NumeroDirective],
+      providers: [ConversorService, MoedaService],
+      imports: [HttpClientModule, FormsModule],
     });
     fixture = TestBed.createComponent(ConversorComponent);
     component = fixture.componentInstance;

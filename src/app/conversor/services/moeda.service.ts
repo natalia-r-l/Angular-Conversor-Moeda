@@ -7,8 +7,13 @@ import { Moeda } from '../models';
 export class MoedaService {
 
   private moedas: Moeda[];
+  private euros: Moeda[];
 
   constructor() { }
+
+  private eurosObj = [
+	{ "sigla": "EUR", "descricao": "Euro" },
+  ]
 
   private moedasObj = [
     { "sigla": "AUD", "descricao": "Dólar australiano" },
@@ -45,6 +50,7 @@ export class MoedaService {
 	{ "sigla": "ZAR", "descricao": "Rand África do Sul" }
   ];
 
+  
   listarTodas(): Moeda[] {
     if (this.moedas) {
       return this.moedas;
@@ -59,5 +65,21 @@ export class MoedaService {
     }
 
     return this.moedas;
+  }
+
+  exibirEuro(): Moeda[] {
+    if (this.euros) {
+      return this.euros;
+    }
+
+    this.euros = [];
+
+    for (let euroObj of this.eurosObj) {
+      let euro: Moeda = new Moeda();
+      Object.assign(euro, euroObj);
+      this.euros.push(euro);
+    }
+
+    return this.euros;
   }
 }

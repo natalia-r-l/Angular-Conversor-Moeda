@@ -12,6 +12,7 @@ import { MoedaService, ConversorService } from '../services';
 export class ConversorComponent implements OnInit{
 
   moedas: Moeda[];
+  euros: Moeda[];
   conversao: Conversao;
   possuiErro: boolean;
   conversaoResponse: ConversaoResponse;
@@ -24,8 +25,9 @@ constructor(
 {}
 
 ngOnInit(): void {
-  //this.moedas = this.moedaService.exibirEuro();
+  
   this.moedas = this.moedaService.listarTodas();  
+  this.euros = this.moedaService.exibirEuro();
   this.init();
 }
 
